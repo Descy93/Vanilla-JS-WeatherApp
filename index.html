@@ -51,20 +51,24 @@
           </form>
           <br />
           <br />
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 19rem;">
             <div class="card-body">
-              <h1 id="city">
-                Plassay
-              </h1>
-              <p id="date">Sunday 25th, 1.00 <br /></p>
-
-              <span class="temperature" id="temperature"></span>
-              <span class="units">
-                <a href="#" id="celsius-link"> °C </a> |
-                <a href="#" id="fahrenheit-link"> °F </a>
-                <p id="description"></p>
+              <h1 id="city"></h1>
+              <p id="date">Sunday 6.00 <br/> <em id="description"></em> </p> 
+                                
+              <span class="temperature" id="temperature"><img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="clear"
+                class="float-left"
+                /> 
               </span>
+                <span class="units">
+                  <a href="#" id="celsius-link"> °C | </a> 
+                  <a href="#" id="fahrenheit-link"> °F </a>
+              </span>
+              
               <div class="precipitation">
+                <strong>Rainfall: </strong> <span id="rain">68</span>%
                 <strong>Humidity: </strong> <span id="humidity">68</span>%
                 <strong>Wind: </strong><span id="wind">16</span>/h
               </div>
@@ -76,55 +80,55 @@
         <div class="col-3">
           <ul>
             <li>
-              <strong>Mon: </strong> ⛈ <br />
-              14°c - 9°c
+              <p class="day" id="description">Sunday: </p>  🌤 
+              19°c - 11°c  <hr />
+            </li>
+           
+
+            <li>
+              <p class="day" id="description">Monday: </p> ⛈
+              14°c - 9°c <hr />
+            </li>
+
+            <li>
+              <p class="day" id="description">Tuesday: </p> 🌧 
+              14°c - 12°c            
             </li>
             <hr />
 
             <li>
-              <strong>Tue: </strong> 🌧 <br />
-              14°c - 12°c
-              <hr />
-            </li>
-
-            <li>
-              <strong>Wed: </strong> ⛆ <br />
+              <p class="day" id="description">Wednesday: </p> ⛆ 
               17°c - 13°c
             </li>
             <hr />
 
             <li>
-              <strong>Thu: </strong> 🌤 <br />
+              <p class="day" id="description">Thursday: </p> 🌤 
               18°c - 11°c
             </li>
             <hr />
 
             <li>
-              <strong>Fri: </strong> 🌤 <br />
+              <p class="day"id="description">Friday: </p> 🌤 
               19°c - 8°c
             </li>
             <hr />
-            <li>
-              <strong>Sat: </strong> 🌤 <br />
-              18°c - 11°c
-            </li>
-            <hr />
 
             <li>
-              <strong>Sun: </strong> 🌤 <br />
-              19°c - 11°c
+              <p class="day"id="description">Saturday: </p> 🌤 
+              18°c - 11°c
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <p class="signature"><a
+    <div class="signature"><a
       href="https://github.com/Descy93/My-Meteo"
       target="_blank"
       class="coded"
     >
       Open-source code 
-    </a> by Stacy Desgardins</p>
-    <script src="src/index.js"></script>
+    </a> by Stacy Desgardins</div>
+    <script src="src/app.js"></script>
   </body>
 </html>

@@ -1,20 +1,25 @@
 body {
     background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
     height: 100%;
-  }
+    font-family: "Dancing Script", cursive;
+}
   
   h1 {
     font-size: 33px;
-    font-family: "Dancing Script", cursive;
     color: #069be5;
     padding: 0;
     margin-left: 0;
   }
   p {
     font-size: 25px;
-    font-family: "Dancing Script", cursive;
     color: #069be5;
     margin-left: 0;
+    margin-bottom: 20px;
+
+  }
+  em{
+    color: #131210;
+    font-size: 16px;
   }
   hr {
     border-top: 3px double;
@@ -25,24 +30,17 @@ body {
     text-align: center;
     list-style: none;
     color: black;
-    font-family: "Dancing Script", cursive;
     position: relative;
     padding-left: 30px;
     padding: 10px;
     margin-top: 5px;
   }
   
-  .temperature {
-    margin-left: 0;
-    font-size: 50px;
-    color: #07adeb;
-  }
+  
   .form-group {
-    font-family: "Dancing Script", cursive;
     margin-left: -70px;
   }
   .Research {
-    font-family: "Dancing Script", cursive;
     font-size: 20px;
     padding: 10px 15px;
     margin-left: -10px;
@@ -53,7 +51,11 @@ body {
     border-radius: 20px;
     border-width: 2px;
     border-color: #07adeb;
-    margin-left: 25px;
+    position: relative;
+    
+  }
+  .view{
+    margin-top: 20px;
   }
   .day{
     color: #07adeb;
@@ -62,16 +64,35 @@ body {
     font-size: 20px;
   }
   
+  .temperature img{
+    margin-right: 0;
+    height: 64px;
+    width: 64px;
+  }
+  .temperature {
+    margin-left: -60px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: #07adeb;
+  }
+  .units a{
+    color: #131210;
+    position: relative;
+    font-size: 15px;
+    top: -25px;
+  }
+
   .precipitation {
     font-family: "Dancing Script", cursive;
     color: #131210;
     font-size: 16px;
     margin-left: 0;
+    margin-top: 40px;
   }
 
   .signature{
     font-size: 12px;
-    margin-left: 10px;
+    margin-left: 20px;
     color: #131210;
     font-style: oblique;
   }
