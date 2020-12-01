@@ -19,8 +19,9 @@ function formatDate(timestamp){
         "Friday",
         "Saturday"
       ];
-
+    let currentTime = new Date();
     let day = days[date.getDay()];
+    dateElement.innerHTML = formatDate(currentTime);
     return `${day} ${hours}:${minutes}`;
 }
 //general API
@@ -32,6 +33,7 @@ function displayTemperature(response){
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#speed");
     let dateElement = document.querySelector("#date");
+
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML =  response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
@@ -41,91 +43,35 @@ function displayTemperature(response){
 }
 
 let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+let city= "Saintes";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 let url = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLat}&lon=${currentLon}&appid=${apiKey}&units=${globalUnits}`;
-axios.get(apiUrl).then(displayWeatherCondition);
+axios.get(apiUrl).then(displayTemperature);
 
 //
-  let dateElement = document.querySelector("#date");
-  let currentTime = new Date();
-  dateElement.innerHTML = formatDate(currentTime);
-  
-  
-    //Global parameters
-  
-      let globalUnits = "metric";
-      let globalCityTempC= 12;
-      let globalCityTempF= calculFahrenheit(globalCityTempC);
-   
-      //geolocalisation API
-  
-    
-    function searchCity(city) {
-      let units = "metric";
-          }
-    
-    function handleSubmit(event) {
-      event.preventDefault();
-      let city = document.querySelector("#city-input").value;
-      searchCity(city);
-    }
-    
-    function searchLocation(position) {
-      let latitude = position.coords.latitude;
-      let longitude = position.coords.longitude;
-      let units = "metric";
-      }
-    
-    let form = document.querySelector("#search-form");
-    form.addEventListener("submit", handleSubmit);
-    
-    let currentLocationButton = document.querySelector("#current-location-button");
-    currentLocationButton.addEventListener("click", getCurrentLocation);
-    
-      searchCity("Saintes");
-    
-    function getCurrentLocation(event) {
-      event.preventDefault();
-      navigator.geolocation.getCurrentPosition(searchLocation);
-    }
-    
-    //Temperature metrics 
-
-    function convertToFahrenheit(event) {
-      event.preventDefault();
-    }
-  
-    function convertToCelsius(event) {
-      event.preventDefault();
-    
-    }
-    function calculFahrenheit (centigrades) {
-    return Number(centigrades)* (9/5) + 32;
+ 
+  function handleSubmit(event) {
+    event.preventDefault();
+    let city = document.querySelector("#city-input").value;
+    searchCity(city);
   }
   
-  function calculCentigrades(fahrenheit) {
-    return (Number(fahrenheit) - 32) * (5/9);
-  }
-  
-  function changeUnits() {
-    determineTempUnits();
-    axios.get(url).then(displayTempAndWeatherToUserFromResponse);
-  
-    if (units === "metric") {
-      tempDisplay.innerHTML = `${Math.round(cityTempC)} °C`;
-      windDisplay.innerHTML = `Wind ${Math.round(windSpeedms)} m/s`;
-    } else if (globalUnits === "imperial") {
-      tempDisplay.innerHTML = `${Math.round(cityTempF)} °F`;
-     
+  function searchLocation(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let units = "metric";
     }
   
-    } 
+  let form = document.querySelector("#search-form");
+  form.addEventListener("submit", handleSubmit);
   
-    let celsiusLink= document.querySelector("#celsius-link");
-    let fahrenheitLink= document.querySelector("#fahrenheit-link");
-    let elementTemp = document.querySelector("#current-temperature");
+  let currentLocationButton = document.querySelector("#current-location-button");
+  currentLocationButton.addEventListener("click", getCurrentLocation);
   
-    celsiusLink.addEventListener("click", convertToCelsius);
-    fahrenheitLink.addEventListener("click", convertToFahrenheit);
+    searchCity("Saintes");
   
+  function getCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchLocation);
+  }
