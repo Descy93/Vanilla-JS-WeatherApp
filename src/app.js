@@ -61,15 +61,14 @@ axios.get(apiUrl).then(displayTemperature);
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     let units = "metric";
+    let form = document.querySelector("#search-form");
+  form.addEventListener("submit", handleSubmit);
+    searchCity("Saintes");
+    let currentLocationButton = document.querySelector("#current-location-button");
+  currentLocationButton.addEventListener("click", getCurrentLocation);
     }
   
-  let form = document.querySelector("#search-form");
-  form.addEventListener("submit", handleSubmit);
   
-  let currentLocationButton = document.querySelector("#current-location-button");
-  currentLocationButton.addEventListener("click", getCurrentLocation);
-  
-    searchCity("Saintes");
   
   function getCurrentLocation(event) {
     event.preventDefault();
