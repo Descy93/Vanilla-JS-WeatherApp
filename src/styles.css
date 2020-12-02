@@ -1,24 +1,24 @@
 body {
-    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
-    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     font-family: "Dancing Script", cursive;
 }
   
   h1 {
     font-size: 33px;
-    color: #069be5;
+    color: #ffffff;
     padding: 0;
     margin-left: 0;
   }
   p {
     font-size: 25px;
-    color: #069be5;
+    color: #ffffff;
     margin-left: 0;
     margin-bottom: 20px;
 
   }
   em{
-    color: #131210;
+    color: #ffffff;
     font-size: 16px;
   }
   hr {
@@ -27,38 +27,50 @@ body {
   
   ul {
     font-size: 18px;
+    font-weight: bolder;
     text-align: center;
     list-style: none;
-    color: black;
+    color : #ffffff;
     position: relative;
     padding-left: 30px;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: -95px;
   }
   
-  
+  .fit-class{
+    float: top;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    height: 100px;
+
+  }
   .form-group {
     margin-left: -70px;
+    margin-top: -50%;
   }
   .Research {
     font-size: 20px;
     padding: 10px 15px;
     margin-left: -10px;
+    margin-top: -50%;
   }
   .card {
     text-align: center;
-    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    background-image: url("https://images.pexels.com/photos/1616126/pexels-photo-1616126.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
     border-radius: 20px;
     border-width: 2px;
-    border-color: #07adeb;
+    border-color:#325D91;
     position: relative;
+    margin-top: -10%;
+    margin-left: -75px;
     
   }
   .view{
     margin-top: 20px;
   }
   .day{
-    color: #07adeb;
+    color:#ffffff;
     font-style: italic;
     font-variant: small-caps;
     font-size: 20px;
@@ -73,10 +85,10 @@ body {
     margin-left: -60px;
     margin-bottom: 20px;
     font-size: 50px;
-    color: #07adeb;
+    color: #ffffff;
   }
   .units a{
-    color: #131210;
+    color: #ffffff;
     position: relative;
     font-size: 15px;
     top: -25px;
@@ -84,7 +96,7 @@ body {
 
   .precipitation {
     font-family: "Dancing Script", cursive;
-    color: #131210;
+    color: #ffffff;
     font-size: 16px;
     margin-left: 0;
     margin-top: 40px;
@@ -93,7 +105,7 @@ body {
   .signature{
     font-size: 12px;
     margin-left: 20px;
-    color: #131210;
+    color: #ffffff;
     font-style: oblique;
   }
   
