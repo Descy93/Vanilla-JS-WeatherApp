@@ -2,7 +2,8 @@ body {
     max-height: 100%;
     max-width: 100%;
     font-family: "Dancing Script", cursive;
-}
+       
+  }
   
   h1 {
     font-size: 33px;
@@ -15,12 +16,8 @@ body {
     color: #ffffff;
     margin-left: 0;
     margin-bottom: 20px;
-
   }
-  em{
-    color: #ffffff;
-    font-size: 16px;
-  }
+  
   hr {
     border-top: 3px double;
   }
@@ -37,6 +34,12 @@ body {
     margin-top: -95px;
   }
   
+  em{
+    font-size: 16px;
+    color: #ffffff;
+    
+  }
+
   .fit-class{
     float: top;
     max-height: 100%;
@@ -75,9 +78,15 @@ body {
     font-variant: small-caps;
     font-size: 20px;
   }
+
+  .description {
+    font-size: 16px;
+    color: #ffffff;
+  }
   
   .temperature img{
-    margin-right: 0;
+    margin: 0;
+    padding-left: 0;
     height: 64px;
     width: 64px;
   }

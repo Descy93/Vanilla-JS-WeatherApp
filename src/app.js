@@ -20,6 +20,7 @@ function formatDate(timestamp){
         "Saturday"
       ];
       let day = days[date.getDay()];
+      return `${day} ${hours}:${minutes}`;
 }
 //general API
 function displayTemperature(response){
@@ -30,24 +31,28 @@ function displayTemperature(response){
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#speed");
     let dateElement = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
 
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML =  response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = response.data.main.humidity;
     wind.innerHTML = Math.round(response.data.wind.speed);
-    dateElement.innerHTML = formatDate(response.data.dt * 1000);   
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    iconElement.setAttributes(
+      "src", 
+      'http://openweathermap.org/img/wn/${response.data.weather[0].icon}04n.png'
+      ); 
+      iconElement.setAttributes("alt", response.data.weather[0].icon);
 }
 
 //
 function searchCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let citySearch = "Shanghai";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
-  return `${day} ${hours}:${minutes}`;
 }
-
-
 
   function handleSubmit(event) {
     event.preventDefault();
