@@ -39,11 +39,11 @@ function displayTemperature(response){
     humidityElement.innerHTML = response.data.main.humidity;
     wind.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
-    iconElement.setAttributes(
+    iconElement.setAttribute(
       "src", 
-      'http://openweathermap.org/img/wn/${response.data.weather[0].icon}04n.png'
+      'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@04n.png'
       ); 
-      iconElement.setAttributes("alt", response.data.weather[0].icon);
+      iconElement.setAttribute("alt", response.data.weather[0].icon);
 }
 
 //
