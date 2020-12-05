@@ -33,7 +33,9 @@ function displayTemperature(response){
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
 
-    temperatureElement.innerHTML = Math.round(response.data.main.temp);
+    celsiusTemperature = response.data.main.temp;
+
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
     cityElement.innerHTML =  response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = response.data.main.humidity;
@@ -41,12 +43,13 @@ function displayTemperature(response){
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     iconElement.setAttribute(
       "src", 
-      'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png'
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       ); 
       iconElement.setAttribute("alt", response.data.weather[0].icon);
 }
 
-//
+//Location
+
 function searchCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let citySearch = "Shanghai";
@@ -56,11 +59,8 @@ function searchCity(city) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    let city = document.querySelector("#city-input").value;
-    searchCity(city);
+    let city = document.querySelector("#city-input").value; 
   }
-  let form = document.querySelector("#search-form");
-  form.addEventListener("submit", handleSubmit);
 
   function searchLocation(position) {
     let latitude = position.coords.latitude;
@@ -75,6 +75,24 @@ function searchCity(city) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchLocation);
    }
+
   let currentLocationButton = document.querySelector("#current-location-button");
  currentLocationButton.addEventListener("click", getCurrentLocation);
-  
+ let form = document.querySelector("#search-form");
+ form.addEventListener("submit", handleSubmit);
+ 
+ searchCity("Shanghai");
+ 
+
+//Units conversion
+function displayFahrenheitTemperature(event){
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsiusTemperature = null;
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+

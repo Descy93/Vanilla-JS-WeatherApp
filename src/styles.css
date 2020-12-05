@@ -1,8 +1,22 @@
+
+header{
+  position: absolute;
+  top: 10%;    
+  left:0;
+  right:0;
+  margin:0 auto;
+  width: 50%;
+  height: 100px;
+  border:thin solid black;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+
 body {
     max-height: 100%;
     max-width: 100%;
     font-family: "Dancing Script", cursive;
-       
+    position: static;
   }
   
   h1 {
@@ -33,12 +47,18 @@ body {
     padding: 10px;
     margin-top: -95px;
   }
+  li{
+    list-style: none;
+    color: #ffffff;
+    
+  }
   
   em{
     font-size: 16px;
     color: #ffffff;
     
   }
+ 
 
   .fit-class{
     float: top;
@@ -51,12 +71,15 @@ body {
   .form-group {
     margin-left: -70px;
     margin-top: -50%;
+    
   }
+
   .Research {
     font-size: 20px;
     padding: 10px 15px;
     margin-left: -10px;
     margin-top: -50%;
+      
   }
   .card {
     text-align: center;

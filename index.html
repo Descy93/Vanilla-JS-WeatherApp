@@ -16,7 +16,7 @@
   </head>
 
   <body>
- 
+ <div class="weather-app-wrapper"> 
       <div class="fit-class">
         <img src="https://images.pexels.com/photos/1616126/pexels-photo-1616126.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" 
         alt="Summer" style="width:100%">
@@ -60,18 +60,13 @@
           <div class="card" style="width: 19rem;">
             <div class="card-body">
               <h1 id="city"></h1>
-              <p id="date">  </p> 
+              <li class="mb-4">Last updated, <span id="date" > </span> </li> 
               <em id="description"></em>
               <br/>
               <br/>
-                                
-              <span class="temperature" id="temperature"><img
-                src=""
-                alt=""
-                id="icon"
-                class="float-left"
-                /> 
-              </span>
+              
+              <img src="" alt="" id="icon" class="float-left" /> 
+              <span class="temperature" id="temperature"> </span>
                 <span class="units">
                   <a href="#" id="celsius-link"> °C | </a> 
                   <a href="#" id="fahrenheit-link"> °F </a>
@@ -140,5 +135,6 @@
       Open-source code 
     </a> by Stacy Desgardins</div>
     <script src="src/app.js"></script>
+  </div>
   </body>
 </html>
