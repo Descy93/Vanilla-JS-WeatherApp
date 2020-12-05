@@ -60,6 +60,7 @@ function searchCity(city) {
   function handleSubmit(event) {
     event.preventDefault();
     let city = document.querySelector("#city-input").value; 
+    searchCity(city);
   }
 
   function searchLocation(position) {
@@ -81,18 +82,33 @@ function searchCity(city) {
  let form = document.querySelector("#search-form");
  form.addEventListener("submit", handleSubmit);
  
- searchCity("Shanghai");
- 
 
 //Units conversion
 function displayFahrenheitTemperature(event){
   event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
   let temperatureElement = document.querySelector("#temperature");
+//removing active class "celsius link"
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+function displayCelsiusTemperature(event){
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 let celsiusTemperature = null;
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+
+searchCity("Shanghai");
