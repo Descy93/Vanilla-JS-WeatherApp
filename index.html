@@ -60,6 +60,7 @@
           <div class="card" style="width: 19rem;">
             <div class="card-body">
               <h1 id="city"></h1>
+
               <li class="mb-4">Last updated, <span id="date" > </span> </li> 
               <em id="description"></em>
               <br/>
@@ -82,49 +83,27 @@
           <br />
          
         </div>
-        <div class="col-3">
+        <div class="col-3" id="forecast">
           <ul>
             <li>
-              <p class="day" id="description">Sunday: </p>  🌤 
-              19°c - 11°c  <hr />
-            </li>
-           
-
-            <li>
-              <p class="day" id="description">Monday: </p> ⛈
-              14°c - 9°c <hr />
-            </li>
-
-            <li>
-              <p class="day" id="description">Tuesday: </p> 🌧 
-              14°c - 12°c            
-            </li>
-            <hr />
-
-            <li>
-              <p class="day" id="description">Wednesday: </p> ⛆ 
-              17°c - 13°c
-            </li>
-            <hr />
-
-            <li>
-              <p class="day" id="description">Thursday: </p> 🌤 
-              18°c - 11°c
-            </li>
-            <hr />
-
-            <li>
-              <p class="day"id="description">Friday: </p> 🌤 
-              19°c - 8°c
-            </li>
-            <hr />
-
-            <li>
-              <p class="day"id="description">Saturday: </p> 🌤 
-              18°c - 11°c
+              <img src="http://openweathermap.org/img/wn/${
+                forecast.weather[0].icon}@2x.png" 
+              alt="" 
+              id="icon" 
+              class="float-left" /> 
+              <h2>
+               15:00
+               </h2>
+        
+             <div class="weather-forecast-temperature">
+             <strong>
+             2°
+             </strong>
+             4°
+          
             </li>
           </ul>
-        </div>
+          </div>
       </div>
     </div>
     <div class="signature"><a

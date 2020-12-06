@@ -1,14 +1,7 @@
 //Time function
 function formatDate(timestamp){
     let date = new Date(timestamp);
-    let hours= date.getHours();
-    if (hours < 10) {
-        hours = `0${hours}`;
-    }
-    let minutes = date.getMinutes();
-    if (minutes < 10) {
-        minutes = `0${minutes}`;
-    }
+   
 
     let days = [
         "Sunday",
@@ -20,9 +13,22 @@ function formatDate(timestamp){
         "Saturday"
       ];
       let day = days[date.getDay()];
-      return `${day} ${hours}:${minutes}`;
+      return `${day} ${formatHours(timestamp)}`;
 }
 //general API
+function formatHours(timestamp){
+  let date = new Date(timestamp);
+  let hours= date.getHours();
+  if (hours < 10) {
+      hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+      minutes = `0${minutes}`;
+  }
+  return`${day} ${hours}:${minutes}`;
+}
+
 function displayTemperature(response){
     console.log(response.data.main.temp);
     let temperatureElement = document.querySelector("#temperature");
@@ -49,12 +55,48 @@ function displayTemperature(response){
 }
 
 //Location
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML= null;
+  let forecast = null;
+ 
+  for (let index = 0; index < 6; index++) {
+    forecast= response.data.list[index];
+    forecastElement.innerHTML = `   
+    <div class="col-3" id="forecast">
+    <ul>
+      <li>
+        <img src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon}@2x.png" 
+        alt="" 
+        id="icon" 
+        class="float-left" /> 
+        <h2>
+          ${formatHours(forecast.dt* 1000)}
+         </h2>
+  
+       <div class="weather-forecast-temperature">
+       <strong>
+       ${Math.round(forecast.main.temp_max)}°
+       </strong>
+       ${Math.round(forecast.main.temp_min)}°
+    
+      </li>
+    </ul>
+    </div>
+    `;
+  }
+    
+  }
 
 function searchCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let citySearch = "Shanghai";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
   function handleSubmit(event) {

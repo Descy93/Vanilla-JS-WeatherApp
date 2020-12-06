@@ -1,4 +1,3 @@
-
 header{
   position: absolute;
   top: 10%;    
@@ -37,7 +36,7 @@ body {
   }
   
   ul {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bolder;
     text-align: center;
     list-style: none;
@@ -47,6 +46,17 @@ body {
     padding: 10px;
     margin-top: -95px;
   }
+  ul img{
+    
+    height: 64px;
+    width: 64px;
+  }
+  
+  h2{
+    font-size: 13px;
+    text-align: center;
+  }
+
   li{
     list-style: none;
     color: #ffffff;
@@ -59,7 +69,6 @@ body {
     
   }
  
-
   .fit-class{
     float: top;
     max-height: 100%;
@@ -101,6 +110,7 @@ body {
     font-variant: small-caps;
     font-size: 20px;
   }
+
 
   .description {
     font-size: 16px;
