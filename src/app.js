@@ -63,7 +63,8 @@ let forecast = null;
 for (let index = 0; index < 6; index++) {
   forecast= response.data.list[index];
   forecastElement.innerHTML += `   
-  <div class="col-3" id="forecast">
+  <div class="col-6">
+  <div class="row" id="forecast"></div>
     <h2>
     ${formatHours(forecast.dt* 1000)}
    </h2>
@@ -76,7 +77,7 @@ for (let index = 0; index < 6; index++) {
      
      <div class="weather-forecast-temperature">
      <strong>
-     ${Math.round(forecast.main.temp_max)}°
+     ${Math.round(forecast.main.temp_max)}°-
      </strong>
      ${Math.round(forecast.main.temp_min)}°
   

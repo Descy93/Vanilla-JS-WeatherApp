@@ -1,97 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link href="src/styles.css" rel="stylesheet" type="text/css" />
-    <title>Weather App</title>
-  </head>
-
-  <body>
- <div class="weather-app-wrapper"> 
-      <div class="fit-class">
-        <img src="https://images.pexels.com/photos/1616126/pexels-photo-1616126.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" 
-        alt="Summer" style="width:100%">
-      </div>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+     <link
+       rel="stylesheet"
+       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+       crossorigin="anonymous"
+     />
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+     <link href="src/styles.css" rel="stylesheet" type="text/css" />
+     <title>Weather App</title>
+   </head>
  
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <br />
-          <br />
-          <br />
-
-          <form
-            class="search-form form-row align-items-center"
-            id="search-form"
-          >
-            <div class="form-group">
-              <input
-                type="text"
-                placeholder="Enter the city"
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                class="form-control shadow-sm"
-              />
-            </div>
-            <br />
-            <div class="form-group Research">
-              <button type="submit" class="btn btn-light">Search</button>
-              <button
-                type="button"
-                class="btn btn-info"
-                id="current-location-button"
-              >
-                Currrent
-              </button>
-            </div>
-          </form>
-          <br />
-          <br />
-          <div class="card" style="width: 19rem;">
-            <div class="card-body">
-              <h1 id="city"></h1>
-
-              <li class="mb-4">Last updated, <span id="date" > </span> </li> 
-              <em id="description"></em>
-              <br/>
-              <br/>
-              
-              <img src="" alt="" id="icon" class="float-left" /> 
-              <span class="temperature" id="temperature"> </span>
-                <span class="units">
-                  <a href="#" id="celsius-link" class="active"> °C | </a> 
-                  <a href="#" id="fahrenheit-link"> °F </a>
-              </span>
-              
-              <div class="precipitation">
-                
-                <strong>Humidity: </strong> <span id="humidity">68</span>%
-                <strong>Wind: </strong><span id="wind">16</span>/h
-              </div>
-            </div>
-          </div>
-          <br /> 
-        </div>
-      
-        
-    <div class="signature"><a
-      href="https://github.com/Descy93/My-Meteo"
-      target="_blank"
-      class="coded"
-    >
-      Open-source code 
-    </a> by Stacy Desgardins</div>
-    <script src="src/app.js"></script>
-  </div>
-  </body>
-</html> 
+   <body>
+     <div class="weather-app-wrapper">
+       <div class="fit-class">
+         <img
+           src="https://images.pexels.com/photos/1616126/pexels-photo-1616126.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+           alt="Summer"
+           style="width: 100%"
+         />
+       </div>
+ 
+       <div class="container">
+         <div class="row">
+           <div class="col-6">
+             <br />
+             <br />
+             <br />
+ 
+             <form
+               class="search-form form-row align-items-center"
+               id="search-form"
+             >
+               <div class="form-group">
+                 <input
+                   type="text"
+                   placeholder="Enter the city"
+                   autofocus="on"
+                   autocomplete="off"
+                   id="city-input"
+                   class="form-control shadow-sm"
+                 />
+               </div>
+               <br />
+               <div class="form-group Research">
+                 <button type="submit" class="btn btn-light">Search</button>
+                 <button
+                   type="button"
+                   class="btn btn-info"
+                   id="current-location-button"
+                 >
+                   Currrent
+                 </button>
+               </div>
+             </form>
+             <br />
+             <br />
+             <div class="card" style="width: 19rem">
+               <div class="card-body">
+                 <h1 id="city"></h1>
+ 
+                 <li class="mb-4">Last updated, <span id="date"> </span></li>
+                 <em id="description"></em>
+                 <br />
+                 <br />
+ 
+                 <img src="" alt="" id="icon" class="float-left" />
+                 <span class="temperature" id="temperature"> </span>
+                 <span class="units">
+                   <a href="#" id="celsius-link" class="active"> °C | </a>
+                   <a href="#" id="fahrenheit-link"> °F </a>
+                 </span>
+ 
+                 <div class="precipitation">
+                   <strong>Humidity: </strong> <span id="humidity">68</span>%
+                   <strong>Wind: </strong><span id="wind">16</span>/h
+                 </div>
+               </div>
+             </div>
+             <br />
+           </div>
+           <div class="col-6">
+             <div class="row" id="forecast"></div>
+           </div>
+         </div>
+ 
+         <div class="signature">
+           <a
+             href="https://github.com/Descy93/My-Meteo"
+             target="_blank"
+             class="coded"
+           >
+             Open-source code
+           </a>
+           by Stacy Desgardins
+         </div>
+       </div>
+     </div>
+     <script src="src/app.js"></script>
+   </body>
+ </html>
