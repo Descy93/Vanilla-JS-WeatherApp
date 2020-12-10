@@ -56,21 +56,21 @@ function displayTemperature(response){
 
 //Location
 function displayForecast(response) {
-let forecastElement = document.querySelector("#forecast");
-forecastElement.innerHTML= null;
-let forecast = null;
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
-for (let index = 0; index < 12; index++) {
-  forecast= response.data.list[index];
-  forecastElement.innerHTML += `   
-  <div class="col-6">
-  <div class="row" id="forecast"></div>
+  for (let index = 0; index < 12; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `   
+  <div class="col mb-4">
     <h2>
-    ${formatHours(forecast.dt* 1000)}
+    ${formatHours(forecast.dt * 1000)}
    </h2>
        
       <img src="http://openweathermap.org/img/wn/${
-        forecast.weather[0].icon}@2x.png" 
+        forecast.weather[0].icon
+      }@2x.png" 
       alt="" 
       id="icon" 
       class="" /> 
@@ -84,8 +84,7 @@ for (let index = 0; index < 12; index++) {
     </div>
   </div>
   `;
-}
-  
+  }
 }
 
 function searchCity(city) {
