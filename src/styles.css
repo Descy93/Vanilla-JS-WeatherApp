@@ -4,11 +4,12 @@ header{
   left:0;
   right:0;
   margin:0 auto;
-  width: 50%;
-  height: 100px;
-  border:thin solid black;
+  width: 100%;
+  height: 100%;
+  border:thin solid rgb(245, 244, 244);
   text-overflow:ellipsis;
   overflow:hidden;
+  
 }
 
 body {
@@ -16,6 +17,7 @@ body {
     max-width: 100%;
     font-family: 'Swanky and Moo Moo', cursive;
     position: static;
+    background: linear-gradient(to top, black, 70%, rgb(222, 37, 247))
   }
   
   h1 {
@@ -25,6 +27,7 @@ body {
     padding: 0;
     margin-left: 0;
   }
+
   p {
     font-size: 20px;
     color: #ffffff;
@@ -32,12 +35,11 @@ body {
     margin-bottom: 20px;
   }
   
-  
   h2{
     font-size: 20px;
     text-align: left;
-
   }
+
 li{
   color: #ffffff;
   list-style: none;
@@ -45,17 +47,20 @@ li{
   
   em{
     font-size: 20px;
-    color: #ffffff;
-    
+    color: #ffffff;  
   }
  
   .fit-class{
-    max-height: 100%;
-    max-width: 100%;
     width: 100%;
     height: 100px;
-
   }
+
+  .fit-class img{
+    border: 2px solid;
+  border-image: linear-gradient(black, 70%, rgb(113, 6, 128)) 20;
+  padding: 0;
+}
+
   .form-group {
     margin-top: -80px;
     position: absolute;
@@ -64,24 +69,26 @@ li{
   .Research {
     font-size: 20px;
     padding: 10px 15px;
-    margin-left: 200px;
+    margin-left: 190px;
     margin-top: -80px;
-    position: absolute;
-      
+    position: absolute;   
   }
+
   .card {
     text-align: center;
     background-image: 
     url("https://images.pexels.com/photos/1616126/pexels-photo-1616126.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=600");
     border-radius: 20px;
-    border-width: 1px;
-    border-color:#ffffff;
-    position: relative;
-    
+    border-width: 2px;
+    border-color: black;
+    position: relative;  
+    margin-left: -10px;
   }
+
   .view{
     margin-top: 20px;
   }
+
   .day{
     color:#ffffff;
     font-style: italic;
@@ -101,6 +108,7 @@ li{
     height: 40px;
     width: 60px;
   }
+
   .temperature {
     margin-left: -60px;
     margin-bottom: 20px;
@@ -114,9 +122,11 @@ li{
     font-weight: bolder;
     cursor: default;
   }
+
   .units .active:hover{
     text-decoration: none;
   }
+
   .units a{
     color: #ffffff;
     position: relative;
@@ -138,20 +148,21 @@ li{
     color: #ffffff;
   }
 
- 
   .weather-forecast-temperature{
     
     margin-left: 0px;
     font-size: 20px;
   }
+
   .image{
     height: 60px;
     width: 60px;
     margin-left: -10px;
   }
+
   .signature{
     font-size: 12px;
-    margin-left: -70px;
+    margin-left: -10px;
     margin-top: 20px;
     color: #ffffff;
     font-style: oblique;
