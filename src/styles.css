@@ -14,44 +14,29 @@ header{
 body {
     max-height: 100%;
     max-width: 100%;
-    font-family: "Dancing Script", cursive;
+    font-family: 'Swanky and Moo Moo', cursive;
     position: static;
   }
   
   h1 {
-    font-size: 33px;
+    font-size: 35px;
+    font-weight: bolder;
     color: #ffffff;
     padding: 0;
     margin-left: 0;
   }
   p {
-    font-size: 25px;
+    font-size: 20px;
     color: #ffffff;
     margin-left: 0;
     margin-bottom: 20px;
   }
   
-  hr {
-    border-top: 3px double;
-  }
-  
-  .col-6{
-    font-size: 15px;
-    font-weight: bolder;
-    text-align: center;
-    list-style: none;
-    color : #ffffff;
-    position: relative;
- 
-  }
-  .col-6 img{  
-    height: 64px;
-    width: 64px;
-  }
   
   h2{
-    font-size: 13px;
-    text-align: center;
+    font-size: 20px;
+    text-align: left;
+
   }
 li{
   color: #ffffff;
@@ -59,7 +44,7 @@ li{
 }
   
   em{
-    font-size: 16px;
+    font-size: 20px;
     color: #ffffff;
     
   }
@@ -72,20 +57,21 @@ li{
 
   }
   .form-group {
-    
+    margin-top: -80px;
   }
 
   .Research {
     font-size: 20px;
-    padding: 10px 15px;
+    padding: 10px 5px;
+    margin-top: -80px;
       
   }
   .card {
     text-align: center;
     background-image: 
-    url("https://images.pexels.com/photos/1616126/pexels-photo-1616126.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    url("https://images.pexels.com/photos/1616126/pexels-photo-1616126.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=600");
     border-radius: 20px;
-    border-width: 2px;
+    border-width: 1px;
     border-color:#ffffff;
     position: relative;
     
@@ -100,17 +86,17 @@ li{
     font-size: 20px;
   }
 
-
   .description {
-    font-size: 16px;
+    font-size: 10px;
     color: #ffffff;
+    font-family: 'Swanky and Moo Moo', cursive;
   }
   
   .temperature img{
     margin: 0;
     padding-left: 0;
-    height: 64px;
-    width: 64px;
+    height: 40px;
+    width: 60px;
   }
   .temperature {
     margin-left: -60px;
@@ -120,8 +106,9 @@ li{
   }
 
   .units .active{
+    font-size: 20px;
     color:#E0B1E6;
-    font-weight: 900;
+    font-weight: bolder;
     cursor: default;
   }
   .units .active:hover{
@@ -130,24 +117,39 @@ li{
   .units a{
     color: #ffffff;
     position: relative;
-    font-size: 15px;
-    top: -25px;
+    font-size: 20px;
+    top: -20px;
     text-decoration: none;
     cursor: default;   
   }
   
   .precipitation {
-    font-family: "Dancing Script", cursive;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 20px;
     margin-left: 0;
-    margin-top: 40px;
+    margin-top: 35px;
   }
 
+  .row {
+    font-size: 30px;
+    color: #ffffff;
+  }
+
+ 
+  .weather-forecast-temperature{
+    
+    margin-left: 0px;
+    font-size: 20px;
+  }
+  .image{
+    height: 60px;
+    width: 60px;
+    margin-left: -10px;
+  }
   .signature{
     font-size: 12px;
-    margin-left: 20px;
+    margin-left: -70px;
+    margin-top: 20px;
     color: #ffffff;
     font-style: oblique;
   }
-  
