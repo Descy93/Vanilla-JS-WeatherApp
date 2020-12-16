@@ -87,17 +87,22 @@ function displayForecast(response) {
   }
 }
 
-function searchCity(city) {
-let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-let searchCity = "Shanghai";
-
-}
+ function searchCity(city) {
+ let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+ let citySearch = "Shanghai";
+ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(displayTemperature);
+ 
+ apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(displayForecast);
+ }
 
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value; 
   searchCity(city);
 }
+
 function searchLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
